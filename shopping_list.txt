@@ -1,5 +1,5 @@
-mleko
-jajca
-maslo
-seker
-puter
+mleko x 2
+jajca x 5
+maslo x 1
+seker x 1
+puter x 2
