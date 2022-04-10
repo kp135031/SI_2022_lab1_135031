@@ -1,0 +1,107 @@
+8.
+PS C:\Users\klime\Documents\Finki-repos> gh repo clone kp135031/SI_2022_lab1_135031
+Cloning into 'SI_2022_lab1_135031'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+PS C:\Users\klime\Documents\Finki-repos> cd .\SI_2022_lab1_135031\
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        shopping_list.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git add .\shopping_list.txt
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git commit -m"Add 5 items to the shopping list"
+[master 7b4eafb] Add 5 items to the shopping list
+ 1 file changed, 5 insertions(+)
+ create mode 100644 shopping_list.txt
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git add .\shopping_list.txt
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git commit -m"Add quantities to the items."
+[master 45b31aa] Add quantities to the items.
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git branch branch1
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git branch branch2
+
+
+17.
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git push --all origin
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 661 bytes | 661.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/kp135031/SI_2022_lab1_135031.git
+   f588149..45b31aa  master -> master
+ * [new branch]      branch1 -> branch1
+ * [new branch]      branch2 -> branch2
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git checkout branch1
+Switched to branch 'branch1'
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git add .\shopping_list.txt
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git commit -m"Change quantity of item #5"
+[branch1 91dc5ce] Change quantity of item #5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git add .\shopping_list.txt
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git commit -m"Change quantity of item #2"
+[master 6a08823] Change quantity of item #2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git push --all origin
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 571 bytes | 571.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/kp135031/SI_2022_lab1_135031.git
+   45b31aa..91dc5ce  branch1 -> branch1
+   45b31aa..6a08823  master -> master
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git checkout branch2
+Switched to branch 'branch2'
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git add .\shopping_list.txt
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git commit -m"Modify item #4"
+[branch2 360e0ad] Modify item #4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+19.
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git reset --soft HEAD~1
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git add .\shopping_list.txt
+
+PS C:\Users\klime\Documents\Finki-repos\SI_2022_lab1_135031> git commit -m"Modify item #4 and add item #6"
+[branch2 47cff8a] Modify item #4 and add item #6
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+
+20. Nema konflikti prispojuvanje na grankata branch1 kon master.
+
+
+21. Ima konflikt vo shopping_list.txt datotekata. Konfliktot e resen so koristenje na komandata git merge --abort (za da se otkazeme od spojuvanjeto), pa spojuvanjeto e izvrseno spored 'theirs' strategijata za da se prisili spojuvanje so prioritet ili favoritiziranje na promenite od branch2 grankata. Spouvanjeto e izvrseno so komandata merge branch2 --strategy-option theirs.
